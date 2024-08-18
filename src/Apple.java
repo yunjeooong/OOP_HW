@@ -1,15 +1,15 @@
 public class Apple implements Phone {
     private String userName;
+    private final String phoneName = "사과폰";
 
-    @Override
-    public void buyPhone(String userName){
-        this.userName=userName;
-        System.out.println(userName + "님이 사과폰을 샀습니다.");
+    public Apple(String userName) {
+        this.userName = userName;
     }
+
 
     @Override
     public void turnON(){
-        System.out.println(userName + "님이 사과폰을 켰습니다.");
+        System.out.println(userName + "님이"+ phoneName+"을 켰습니다.");
 
 
     }
@@ -18,6 +18,11 @@ public class Apple implements Phone {
     public void loading(){
         System.out.println("@@@ 폰 켜지는 중 @@@\n");
 
+    }
+
+    @Override
+    public String getPhoneName() {
+        return phoneName;
     }
 
 }
